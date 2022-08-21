@@ -8,6 +8,8 @@ TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = 'English'
 
+THEME = 'notmyidea'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -24,4 +26,4 @@ SOCIAL = (('Twitter', 'https://twitter.com/JeffFNicholas'),)
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
