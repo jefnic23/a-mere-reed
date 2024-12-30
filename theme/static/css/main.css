@@ -13,16 +13,35 @@
 }
 
 @font-face {
-    font-family: 'EB Garamond';
+    font-family: 'EB Garamond SC';
     src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
+    font-variant: small-caps;
+}
+
+@font-face {
+    font-family: 'EB Garamond Initials F1';
+    src: url('../fonts/EBGaramond-InitialsF1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'EB Garamond Initials F2';
+    src: url('../fonts/EBGaramond-InitialsF2.otf') format('opentype');
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'EB Garamond', Roboto, Open Sans, Liberation Sans, DejaVu Sans, Verdana, Helvetica, Arial, sans-serif;
+    font-family: 'EB Garamond', serif;
     background-color: rgb(36, 39, 58);
     color: rgb(202, 211, 245);
+}
+
+a {
+    color: rgb(138, 173, 244);
 }
 
 .entry-content {
@@ -33,6 +52,52 @@ body {
     margin: auto;
 }
 
-a {
-    color: rgb(138, 173, 244);
+.entry-content h2 {
+    border-bottom: 1px solid rgb(128, 135, 162);
+}
+
+.entry-content h2 a {
+    cursor: pointer;
+    text-decoration: none;
+    font-variant: small-caps;
+    color: rgb(202, 211, 245);
+}
+
+.entry-content h2::after {
+    content: '🔗';  /* Unicode link symbol or replace with an SVG or icon font */
+    font-size: 0.8em;
+    margin-left: 8px;
+    visibility: hidden;
+    transition: opacity 0.2s, transform 0.2s;
+    opacity: 0;
+    transform: translateY(-2px);
+}
+  
+.entry-content h2:hover::after {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropcap {
+    font-family: "EB Garamond Initials F1";
+    font-size: 5em;
+    float: left;
+    line-height: 1;
+    margin-right: 0.2em;
+    margin-top: 0.1em;
+    color: rgb(237, 135, 150);
+    position: relative;
+    text-transform: uppercase;
+
+    &::before {
+        font-family: "EB Garamond Initials F2";
+        color: rgb(202, 211, 245);
+        content: attr(data-first-letter);
+        position: absolute;
+    }
+}
+
+.sc {
+    font-family: 'EB Garamond SC';
 }
