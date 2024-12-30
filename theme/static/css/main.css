@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond12-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramond12-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    font-family: 'EB Garamond', Roboto, Open Sans, Liberation Sans, DejaVu Sans, Verdana, Helvetica, Arial, sans-serif;
+    background-color: rgb(36, 39, 58);
+    color: rgb(202, 211, 245);
+}
+
+.entry-content {
+    font-size: 21px;
+    line-height: 1.55;
+    width: 843px;
+    text-align: justify;
+    margin: auto;
+}
+
+a {
+    color: rgb(138, 173, 244);
+}
