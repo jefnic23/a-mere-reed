@@ -1,14 +1,20 @@
-AUTHOR = 'Jeff Nicholas'
-SITENAME = 'A Mere Reed'
-SITEURL = ''
+AUTHOR = "Jeff Nicholas"
+SITENAME = "A Mere Reed"
+SITEURL = ""
 
-PATH = 'content'
+PATH = "content"
+ARTICLE_PATHS = ["articles", "drafts"]
 
-TIMEZONE = 'America/New_York'
+LOAD_CONTENT_CACHE = False
+SHOW_DRAFTS = True
 
-DEFAULT_LANG = 'English'
+THEME = "theme"
 
-THEME = 'notmyidea'
+TIMEZONE = "America/New_York"
+
+DEFAULT_LANG = "en"
+
+PLUGINS = ['toc']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -18,10 +24,10 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('GitHub', 'https://github.com/jefnic23'),)
+LINKS = (("GitHub", "https://github.com/jefnic23"),)
 
 # Social widget
-SOCIAL = (('Twitter', 'https://twitter.com/JeffFNicholas'),)
+SOCIAL = (("Twitter", "https://twitter.com/JeffFNicholas"),)
 
 DEFAULT_PAGINATION = 10
 
