@@ -1,35 +1,3 @@
-@font-face {
-    font-family: 'EB Garamond';
-    src: url('../fonts/EBGaramond12-Italic.otf') format('opentype');
-    font-weight: normal;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'EB Garamond';
-    src: url('../fonts/EBGaramond12-Regular.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'EB Garamond SC';
-    src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-    font-variant: small-caps;
-}
-
-@font-face {
-    font-family: 'EB Garamond Initials F1';
-    src: url('../fonts/EBGaramond-InitialsF1.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'EB Garamond Initials F2';
-    src: url('../fonts/EBGaramond-InitialsF2.otf') format('opentype');
-}
-
 html {
     scroll-behavior: smooth;
 }
@@ -42,6 +10,10 @@ body {
 
 a {
     color: rgb(138, 173, 244);
+}
+
+.small-caps {
+    font-variant: small-caps;
 }
 
 .entry-content {
@@ -64,7 +36,7 @@ a {
 }
 
 .entry-content h2::after {
-    content: '🔗';  /* Unicode link symbol or replace with an SVG or icon font */
+    content: '🔗';
     font-size: 0.8em;
     margin-left: 8px;
     visibility: hidden;
@@ -72,7 +44,7 @@ a {
     opacity: 0;
     transform: translateY(-2px);
 }
-  
+
 .entry-content h2:hover::after {
     visibility: visible;
     opacity: 1;
@@ -86,18 +58,13 @@ a {
     line-height: 1;
     margin-right: 0.2em;
     margin-top: 0.1em;
-    color: rgb(237, 135, 150);
-    position: relative;
+    color: rgba(237, 135, 150, 0.76);
     text-transform: uppercase;
 
     &::before {
         font-family: "EB Garamond Initials F2";
         color: rgb(202, 211, 245);
-        content: attr(data-first-letter);
+        content: attr(data-letter);
         position: absolute;
     }
-}
-
-.sc {
-    font-family: 'EB Garamond SC';
 }

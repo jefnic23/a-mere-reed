@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'EB Garamond';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/EBGaramond12-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'EB Garamond';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/EBGaramond12-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'EB Garamond SC';
+    font-weight: normal;
+    font-style: normal;
+    font-variant: small-caps;
+    src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'EB Garamond Initials F1';
+    src: url('../fonts/EBGaramond-InitialsF1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'EB Garamond Initials F2';
+    src: url('../fonts/EBGaramond-InitialsF2.otf') format('opentype');
+}

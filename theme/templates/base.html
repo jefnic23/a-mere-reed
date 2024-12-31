@@ -1,29 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>{{ SITENAME }}{% if page or article %} - {% endif %}{% block title %}{% endblock %}</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/main.css" />
-        <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/images/favicon.ico">
-    </head>
-    <body>
-        <header id="banner" class="body">
-            <h1>
-                <a href="{{ SITEURL }}">{{ SITENAME }}</a>
-            </h1>
-        </header>
-        <nav>
-            <ul>
-                {% for page in pages %}
+
+<head>
+    <title>{{ SITENAME }}{% if page or article %} - {% endif %}{% block title %}{% endblock %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="Pelican" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/images/favicon.ico">
+</head>
+
+<body>
+    <header id="banner" class="body">
+        <h1>
+            <a href="{{ SITEURL }}">{{ SITENAME }}</a>
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            {% for title, link in MENUITEMS %}
+                <li><a href="{{ link }}">{{ title }}</a></li>
+            {% endfor %}
+            {% if DISPLAY_PAGES_ON_MENU %}
+                {% for p in pages %}
                     <li>
-                        <a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a>
+                        <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a>
                     </li>
                 {% endfor %}
-            </ul>
-        </nav>
+            {% endif %}
+            {% if DISPLAY_CATEGORIES_ON_MENU %}
+                {% for cat, null in categories %}
+                    <li>
+                        <a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{cat}}</a>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </nav>
 
-        {% block content %}{% endblock %}
-    </body>
+    <main>
+    {   % block content %}{% endblock %}
+    </main>
+</body>
+
 </html>
