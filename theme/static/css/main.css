@@ -1,3 +1,5 @@
+@import url("fonts.css");
+
 html {
     scroll-behavior: smooth;
 }
@@ -49,6 +51,19 @@ a {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
+}
+
+.entry-content>p:first-of-type:before {
+    content: attr(data-first-letter);
+    text-transform: uppercase;
+    top: var(--dropcap-vertical-offset);
+    font-size: var(--dropcap-font-size);
+    line-height: 1;
+    font-family: var(--font-dropcap-background);
+    color: var(--before-color);
+    padding-right: .1em;
+    position: absolute;
+    left: 0;
 }
 
 .dropcap {
