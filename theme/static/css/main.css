@@ -18,7 +18,18 @@ a {
     font-variant: small-caps;
 }
 
-.entry-content {
+.entry-title {
+    font-size: 47px;
+    line-height: 1;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.entry-authors {
+    color: rgb(165, 173, 203);
+}
+
+article {
     font-size: 21px;
     line-height: 1.55;
     width: 843px;
@@ -26,18 +37,18 @@ a {
     margin: auto;
 }
 
-.entry-content h2 {
+article h2 {
     border-bottom: 1px solid rgb(128, 135, 162);
 }
 
-.entry-content h2 a {
+article h2 a {
     cursor: pointer;
     text-decoration: none;
     font-variant: small-caps;
     color: rgb(202, 211, 245);
 }
 
-.entry-content h2::after {
+article h2::after {
     content: '🔗';
     font-size: 0.8em;
     margin-left: 8px;
@@ -47,31 +58,46 @@ a {
     transform: translateY(-2px);
 }
 
-.entry-content h2:hover::after {
+article h2:hover::after {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
 }
 
-.entry-content>p:first-of-type:before {
-    content: attr(data-first-letter);
-    text-transform: uppercase;
-    top: var(--dropcap-vertical-offset);
-    font-size: var(--dropcap-font-size);
-    line-height: 1;
-    font-family: var(--font-dropcap-background);
-    color: var(--before-color);
-    padding-right: .1em;
-    position: absolute;
-    left: 0;
+article[data-use-dropcap=true]>p:first-of-type {
+    position: relative;
 }
 
-.dropcap {
+article[data-use-dropcap=true]>p:first-of-type:first-letter {
+    text-transform: uppercase;
+    float: left;
+    pointer-events: none;
+    color: rgb(202, 211, 245);
+    font-size: 5.5em;
+    line-height: 1;
+    font-family: "EB Garamond Initials F2";
+    margin-top: 0.3rem;
+    margin-right: 0.7rem;
+}
+
+article[data-use-dropcap=true]>p:first-of-type:before {
+    content: attr(data-first-letter);
+    font-family: "EB Garamond Initials F1";
+    text-transform: uppercase;
+    font-size: 5.5em;
+    color: rgba(237, 135, 150, 0.76);
+    position: absolute;
+    line-height: 1;
+    left: 0;
+    margin-top: 0.3rem;
+}
+
+/* .dropcap {
     font-family: "EB Garamond Initials F1";
     font-size: 5em;
     float: left;
     line-height: 1;
-    margin-right: 0.2em;
+    margin-right: 0.1em;
     margin-top: 0.1em;
     color: rgba(237, 135, 150, 0.76);
     text-transform: uppercase;
@@ -81,5 +107,6 @@ a {
         color: rgb(202, 211, 245);
         content: attr(data-letter);
         position: absolute;
+        z-index: -1;
     }
-}
+} */
