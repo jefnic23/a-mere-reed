@@ -15,7 +15,7 @@ TIMEZONE = "America/New_York"
 DEFAULT_LANG = "en"
 
 PLUGIN_PATHS = ["plugins"]
-PLUGINS = ["add_dropcap"]
+PLUGINS = ["add_dropcap", "format_time"]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
