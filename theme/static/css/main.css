@@ -29,6 +29,11 @@ a {
     color: rgb(165, 173, 203);
 }
 
+.time {
+    font-variant: small-caps;
+    text-transform: lowercase;
+}
+
 article {
     font-size: 21px;
     line-height: 1.55;
