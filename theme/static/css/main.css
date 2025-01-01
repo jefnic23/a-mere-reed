@@ -27,6 +27,7 @@ a {
 
 .entry-authors {
     color: rgb(165, 173, 203);
+    margin: 0 auto;
 }
 
 .time {
@@ -96,22 +97,3 @@ article[data-use-dropcap=true]>p:first-of-type:before {
     left: 0;
     margin-top: 0.3rem;
 }
-
-/* .dropcap {
-    font-family: "EB Garamond Initials F1";
-    font-size: 5em;
-    float: left;
-    line-height: 1;
-    margin-right: 0.1em;
-    margin-top: 0.1em;
-    color: rgba(237, 135, 150, 0.76);
-    text-transform: uppercase;
-
-    &::before {
-        font-family: "EB Garamond Initials F2";
-        color: rgb(202, 211, 245);
-        content: attr(data-letter);
-        position: absolute;
-        z-index: -1;
-    }
-} */
