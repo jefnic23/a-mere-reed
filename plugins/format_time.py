@@ -10,7 +10,7 @@ def format_time(content):
     """Wrap times in <span> for styling."""
     if content._content:  # Ensure content is not empty
         content._content = TIME_PATTERN.sub(
-            r'<span class="time">\1</span>', content._content
+            r'<span class="small-caps">\1</span>', content._content
         )
 
 
