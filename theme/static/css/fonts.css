@@ -1,22 +1,23 @@
 @font-face {
     font-family: 'EB Garamond';
-    font-weight: normal;
-    font-style: normal;
+    font-display: swap;
+    font-optical-sizing: auto;
+    font-feature-settings: none;
     src: url('../fonts/EBGaramond12-Regular.otf') format('opentype');
 }
 
 @font-face {
-    font-family: 'EB Garamond';
-    font-weight: normal;
+    font-family: 'EB Garamond Italic';
     font-style: italic;
+    font-optical-sizing: auto;
+    font-feature-settings: none;
     src: url('../fonts/EBGaramond12-Italic.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'EB Garamond SC';
-    font-weight: normal;
-    font-style: normal;
-    font-variant: small-caps;
+    font-optical-sizing: auto;
+    font-feature-settings: none;
     src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
 }
 

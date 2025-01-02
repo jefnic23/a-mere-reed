@@ -15,7 +15,8 @@ a {
 }
 
 .small-caps {
-    font-variant: small-caps;
+    font-family: 'EB Garamond SC';
+    text-transform: lowercase;
 }
 
 .entry-title {
@@ -25,22 +26,18 @@ a {
     margin-bottom: 0;
 }
 
-.entry-authors {
+.entry-authors p {
     color: rgb(165, 173, 203);
     margin: 0 auto;
 }
 
-.time {
-    font-variant: small-caps;
-    text-transform: lowercase;
-}
-
 article {
-    font-size: 21px;
-    line-height: 1.55;
+    font-size: 24px;
+    line-height: 1.5;
     width: 843px;
     text-align: justify;
     margin: auto;
+    hyphens: auto;
 }
 
 article h2 {
@@ -82,8 +79,8 @@ article[data-use-dropcap=true]>p:first-of-type:first-letter {
     font-size: 5.5em;
     line-height: 1;
     font-family: "EB Garamond Initials F2";
-    margin-top: 0.3rem;
-    margin-right: 0.7rem;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 article[data-use-dropcap=true]>p:first-of-type:before {
@@ -95,5 +92,9 @@ article[data-use-dropcap=true]>p:first-of-type:before {
     position: absolute;
     line-height: 1;
     left: 0;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
+}
+
+article[data-use-dropcap=true]>p:first-of-type:first-line {
+    font-family: "EB Garamond SC";
 }
