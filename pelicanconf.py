@@ -1,6 +1,13 @@
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from filters import toc
+
 AUTHOR = "Jeff Nicholas"
 SITENAME = "A Mere Reed"
-SITEURL = ""
+SITEURL = "merereed.com"
 
 PATH = "content"
 ARTICLE_PATHS = ["articles", "drafts"]
@@ -16,6 +23,17 @@ DEFAULT_LANG = "en"
 
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["add_dropcap", "apply_smallcaps", "format_time"]
+
+MENUITEMS = [
+    ("Home", "/"),
+    ("Posts", "/archives.html"),
+]
+
+JINJA_FILTERS = {
+    "toc": toc,
+}
+
+ARCHIVES_SAVE_AS = "archives.html"
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

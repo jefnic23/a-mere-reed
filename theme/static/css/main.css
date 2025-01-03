@@ -12,6 +12,63 @@ body {
 
 a {
     color: rgb(138, 173, 244);
+    transition: 0.21s;
+}
+
+a:hover {
+    color: rgb(125, 196, 228);
+}
+
+#toc-container {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    max-width: 300px;
+}
+
+#toc-toggle {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: left;
+    width: 100%;
+}
+
+#toc-toggle:hover {
+    background-color: #0056b3;
+}
+
+#toc-content {
+    display: none; /* Hidden by default */
+    margin-top: 10px;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#toc-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#toc-content ul li {
+    margin: 5px 0;
+}
+
+#toc-content ul li a {
+    text-decoration: none;
+    color: rgb(202, 211, 245);
+}
+
+#toc-content ul li a:hover {
+    color: rgb(125, 196, 228);
 }
 
 .small-caps {

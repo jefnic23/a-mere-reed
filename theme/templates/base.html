@@ -8,6 +8,7 @@
     <meta name="generator" content="Pelican" />
     <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/main.css" />
     <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/images/favicon.ico">
+    <script src="/{{ THEME_STATIC_DIR }}/js/listeners.js"></script>
 </head>
 
 <body>
@@ -25,13 +26,6 @@
                 {% for p in pages %}
                     <li>
                         <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a>
-                    </li>
-                {% endfor %}
-            {% endif %}
-            {% if DISPLAY_CATEGORIES_ON_MENU %}
-                {% for cat, null in categories %}
-                    <li>
-                        <a href="{{ SITEURL }}/{{ cat.url }}" {% if cat==category %} aria-current="page" {% endif %}>{{cat}}</a>
                     </li>
                 {% endfor %}
             {% endif %}
