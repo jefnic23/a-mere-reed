@@ -1,4 +1,4 @@
-Title: About
+Title: About me
 Date: 2022-08-22
 Slug: about
 ---
