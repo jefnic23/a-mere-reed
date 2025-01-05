@@ -8,32 +8,27 @@
     <meta name="generator" content="Pelican" />
     <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/main.css" />
     <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/images/favicon.ico">
-    <script src="/{{ THEME_STATIC_DIR }}/js/listeners.js"></script>
 </head>
 
 <body>
-    <header id="banner" class="body">
-        <h1>
-            <a href="{{ SITEURL }}">{{ SITENAME }}</a>
-        </h1>
-    </header>
-    <nav>
-        <ul>
-            {% for title, link in MENUITEMS %}
-                <li><a href="{{ link }}">{{ title }}</a></li>
-            {% endfor %}
-            {% if DISPLAY_PAGES_ON_MENU %}
-                {% for p in pages %}
-                    <li>
-                        <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-    </nav>
-
     <main>
-    {% block content %}{% endblock %}
+        <nav id="banner">
+            <a id="home" href="{{ SITEURL }}">{{ SITENAME }}</a>
+            <div>
+                
+                {% for title, link in MENUITEMS %}
+                    <a href="{{ link }}">{{ title }}</a>
+                {% endfor %}
+                {% if DISPLAY_PAGES_ON_MENU %}
+                    {% for p in pages %}
+                        <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>
+                            {{ p.title }}
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </nav>
+        {% block content %}{% endblock %}
     </main>
 </body>
 

@@ -17,24 +17,11 @@
         <header>
             <h1 class="entry-title">{{ article.title }}</h1>
             <div class="entry-authors">
-                <p>By {% for author in article.authors %}
-                    {{ author }}
-                    {% endfor %}
+                <p>
+                    By {% for author in article.authors %} {{ author }} {% endfor %}
                 </p>
             </div>
         </header>
-        <div id="toc-container">
-            <button id="toc-toggle" class="toc-toggle">Table of Contents</button>
-            <div id="toc-content" class="toc-content">
-                <ul>
-                    {% for header in article.content | toc %}
-                    <li>
-                        <a href="#{{ header.id }}">{{ header.text }}</a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
         {{ article.content }}
     </article>
 </section>

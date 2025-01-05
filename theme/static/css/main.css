@@ -8,6 +8,48 @@ body {
     font-family: 'EB Garamond', serif;
     background-color: rgb(36, 39, 58);
     color: rgb(202, 211, 245);
+    margin: 0;
+}
+
+main {
+    width: 843px;
+    margin: auto;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    column-gap: 3rem;
+    border-bottom: 1px dotted rgb(128, 135, 162);;
+}
+
+#home {
+    font-family: 'EB Garamond SC';
+    font-size: 48px;
+    width: auto;
+    color: rgb(165, 173, 203);
+    text-decoration: none;
+}
+
+#home:hover {
+    color: rgb(125, 196, 228);
+}
+
+nav div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    column-gap: 1rem;
+}
+
+nav div a {
+    display: flex;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(165, 173, 203);
 }
 
 a {
@@ -16,58 +58,6 @@ a {
 }
 
 a:hover {
-    color: rgb(125, 196, 228);
-}
-
-#toc-container {
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    margin: 20px 0;
-    padding: 10px;
-    border-radius: 5px;
-    position: relative;
-    max-width: 300px;
-}
-
-#toc-toggle {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: left;
-    width: 100%;
-}
-
-#toc-toggle:hover {
-    background-color: #0056b3;
-}
-
-#toc-content {
-    display: none; /* Hidden by default */
-    margin-top: 10px;
-    overflow-y: auto;
-    max-height: 300px;
-}
-
-#toc-content ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-#toc-content ul li {
-    margin: 5px 0;
-}
-
-#toc-content ul li a {
-    text-decoration: none;
-    color: rgb(202, 211, 245);
-}
-
-#toc-content ul li a:hover {
     color: rgb(125, 196, 228);
 }
 
@@ -91,9 +81,7 @@ a:hover {
 article {
     font-size: 24px;
     line-height: 1.5;
-    width: 843px;
     text-align: justify;
-    margin: auto;
     hyphens: auto;
 }
 
