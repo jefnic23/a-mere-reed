@@ -1,10 +1,3 @@
-import os
-import sys
-
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
-from filters import toc
-
 AUTHOR = "Jeff Nicholas"
 SITENAME = "A Mere Reed"
 SITEURL = "merereed.com"
@@ -25,13 +18,8 @@ PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["add_dropcap", "apply_smallcaps", "format_time"]
 
 MENUITEMS = [
-    ("Home", "/"),
     ("Posts", "/archives.html"),
 ]
-
-JINJA_FILTERS = {
-    "toc": toc,
-}
 
 ARCHIVES_SAVE_AS = "archives.html"
 
