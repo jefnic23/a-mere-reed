@@ -1,14 +1,38 @@
 @import url("fonts.css");
 
+:root {
+    color-scheme: light dark;
+
+    --nord0: #2e3440;
+    --nord1: #3b4252;
+    --nord2: #434c5e;
+    --nord3: #4c566a;
+
+    --nord4: #d8dee9;
+    --nord5: #e5e9f0;
+    --nord6: #eceff4;
+
+    --nord7: #8fbcbb;
+    --nord8: #88c0d0;
+    --nord9: #81a1c1;
+    --nord10: #5e81ac;
+
+    --nord11: #bf616a;
+    --nord12: #d08770;
+    --nord13: #ebcb8b;
+    --nord14: #a3be8c;
+    --nord15: #b48ead;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'EB Garamond', serif;
-    background-color: rgb(36, 39, 58);
-    color: rgb(202, 211, 245);
     margin: 0;
+    font-family: 'EB Garamond', serif;
+    background-color: light-dark(var(--nord6), var(--nord0));
+    color: light-dark(var(--nord0), var(--nord6));
 }
 
 main {
@@ -22,19 +46,19 @@ nav {
     flex-flow: row wrap;
     align-items: baseline;
     column-gap: 3rem;
-    border-bottom: 1px dotted rgb(128, 135, 162);;
+    border-bottom: 1px dotted light-dark(var(--nord2), var(--nord4));
 }
 
 #home {
     font-family: 'EB Garamond SC';
     font-size: 48px;
     width: auto;
-    color: rgb(165, 173, 203);
+    color: light-dark(var(--nord1), var(--nord4));
     text-decoration: none;
 }
 
 #home:hover {
-    color: rgb(125, 196, 228);
+    color: light-dark(var(--nord10), var(--nord8));
 }
 
 nav div {
@@ -49,16 +73,16 @@ nav div a {
     font-size: 18px;
     text-transform: uppercase;
     text-decoration: none;
-    color: rgb(165, 173, 203);
+    color: light-dark(var(--nord1), var(--nord4));
 }
 
 a {
-    color: rgb(138, 173, 244);
+    color: light-dark(var(--nord10), var(--nord8));
     transition: 0.21s;
 }
 
 a:hover {
-    color: rgb(125, 196, 228);
+    color: var(--nord9);
 }
 
 .small-caps {
@@ -74,7 +98,7 @@ a:hover {
 }
 
 .entry-authors p {
-    color: rgb(165, 173, 203);
+    color: light-dark(var(--nord1), var(--nord4));
     margin: 0 auto;
 }
 
@@ -86,14 +110,14 @@ article {
 }
 
 article h2 {
-    border-bottom: 1px solid rgb(128, 135, 162);
+    border-bottom: 1px solid light-dark(var(--nord1), var(--nord4));
 }
 
 article h2 a {
     cursor: pointer;
     text-decoration: none;
     font-variant: small-caps;
-    color: rgb(202, 211, 245);
+    color: light-dark(var(--nord1), var(--nord4));
 }
 
 article h2::after {
@@ -120,7 +144,7 @@ article[data-use-dropcap=true]>p:first-of-type:first-letter {
     text-transform: uppercase;
     float: left;
     pointer-events: none;
-    color: rgb(202, 211, 245);
+    color: light-dark(var(--nord0), var(--nord6));
     font-size: 5.5em;
     line-height: 1;
     font-family: "EB Garamond Initials F2";
@@ -133,7 +157,7 @@ article[data-use-dropcap=true]>p:first-of-type:before {
     font-family: "EB Garamond Initials F1";
     text-transform: uppercase;
     font-size: 5.5em;
-    color: rgba(237, 135, 150, 0.76);
+    color: var(--nord12);
     position: absolute;
     line-height: 1;
     left: 0;
@@ -143,3 +167,4 @@ article[data-use-dropcap=true]>p:first-of-type:before {
 article[data-use-dropcap=true]>p:first-of-type:first-line {
     font-family: "EB Garamond SC";
 }
+
