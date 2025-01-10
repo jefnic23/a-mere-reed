@@ -53,12 +53,12 @@ nav {
     font-family: 'EB Garamond SC';
     font-size: 48px;
     width: auto;
-    color: light-dark(var(--nord1), var(--nord4));
+    color: light-dark(var(--nord2), var(--nord4));
     text-decoration: none;
 }
 
 #home:hover {
-    color: light-dark(var(--nord10), var(--nord8));
+    color: var(--nord9);
 }
 
 nav div {
@@ -73,7 +73,7 @@ nav div a {
     font-size: 18px;
     text-transform: uppercase;
     text-decoration: none;
-    color: light-dark(var(--nord1), var(--nord4));
+    color: light-dark(var(--nord2), var(--nord4));
 }
 
 a {
@@ -98,7 +98,7 @@ a:hover {
 }
 
 .entry-authors p {
-    color: light-dark(var(--nord1), var(--nord4));
+    color: light-dark(var(--nord2), var(--nord4));
     margin: 0 auto;
 }
 
@@ -110,17 +110,17 @@ article {
 }
 
 article h2 {
-    border-bottom: 1px solid light-dark(var(--nord1), var(--nord4));
+    border-bottom: 1px solid light-dark(var(--nord2), var(--nord4));
 }
 
 article h2 a {
     cursor: pointer;
     text-decoration: none;
     font-variant: small-caps;
-    color: light-dark(var(--nord1), var(--nord4));
+    color: light-dark(var(--nord2), var(--nord4));
 }
 
-article h2::after {
+article h2 a::after {
     content: '🔗';
     font-size: 0.8em;
     margin-left: 8px;
@@ -130,7 +130,7 @@ article h2::after {
     transform: translateY(-2px);
 }
 
-article h2:hover::after {
+article h2 a:hover::after {
     visibility: visible;
     opacity: 1;
     transform: translateY(0);
@@ -167,4 +167,3 @@ article[data-use-dropcap=true]>p:first-of-type:before {
 article[data-use-dropcap=true]>p:first-of-type:first-line {
     font-family: "EB Garamond SC";
 }
-
