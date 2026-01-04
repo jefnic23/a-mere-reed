@@ -1,14 +1,50 @@
 {% extends "base.html" %}
 
-{% block title %}{{ SITENAME|striptags }} - Archives{% endblock %}
+{% block title %} - Archives{% endblock %}
 
 {% block content %}
-    <h2>Recent posts</h2>
+    <div id="archives">
+        <h1>Blog Posts</h1>
 
-    <dl>
-        {% for article in dates %}
-            <dt>{{ article.locale_date }}</dt>
-            <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+        <div class="archive-sub">
+            There isn't much here...yet. I hope to remedy that over time.
+        </div>
+
+        {% for article in articles %}
+            {% set year = article.date.strftime('%Y') %}
+            {% if loop.first %}
+                <h2 id="{{year }}"><a href="#{{year}}">{{ year }}</a></h2>
+            {% else %}
+                {% set prevyear = loop.previtem.date.strftime('%Y') %}
+                {%if prevyear != year %}
+                    <h2 id="{{year }}"><a href="#{{year}}">{{ year }}</a></h2>
+                {% endif %}
+            {% endif %}
+
+            {% if loop.last %}
+                <div itemscope class="last-entry-of-year">
+            {% else %}
+            {% set next_year = loop.nextitem.date.strftime('%Y') %}
+
+                {% if next_year != year %}
+                    <div itemscope class="last-entry-of-year">
+                {% else %}
+                    <div itemscope>
+                {% endif %}
+            {% endif %}
+
+            <a href="{{ SITEURL }}/{{ article.url }}">
+                {{ article.title }}
+                {%if article.subtitle %}
+                <small class="subtitle">
+                    {{ article.subtitle }}
+                </small>
+                {% endif %}
+            </a>
+            <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+            </time>
+            </div>
         {% endfor %}
-    </dl>
+    </div>
 {% endblock %}

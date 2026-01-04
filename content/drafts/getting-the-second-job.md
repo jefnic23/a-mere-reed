@@ -1,9 +1,9 @@
 ---
-Title: Getting the Second Job
-Date: 2024-01-01
-Author: Jeff Nicholas
-Status: draft
-Dropcap: true
+title: Getting the Second Job
+date: 2024-01-01
+status: draft
+category: Personal
+dropcap: true
 ---
 
 ## [Life in the Fast Lane](#ife-in-the-fast-lane){#ife-in-the-fast-lane}

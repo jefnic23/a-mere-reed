@@ -1,14 +1,14 @@
-{% extends "base.html" %} {% block html_lang %}{{ article.lang }} {% endblock %}
+{% extends "base.html" %} {% block html_lang %}{{ page.lang }} {% endblock %}
 
 {% block head %}
 {{ super() }}
-{% if article.summary %}
-<meta name="description" content="{{ article.summary | striptags | safe | truncate(150) }}" />
+{% if page.summary %}
+<meta name="description" content="{{ page.summary | striptags | safe | truncate(150) }}" />
 {% endif %}
 {% endblock %}
 
 {% block title %}
-{{ article.title|striptags }}
+{{ page.title|striptags }}
 {% endblock %}
 
 {% block content %}
@@ -18,8 +18,8 @@
 
     <main>
         <section id="content" class="body">
-            <article data-use-dropcap="{{ article.dropcap }}">
-                {{ article.content }}
+            <article data-use-dropcap="{{ page.dropcap }}">
+                {{ page.content }}
             </article>
         </section>
     </main>

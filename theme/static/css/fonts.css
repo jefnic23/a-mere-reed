@@ -1,26 +1,4 @@
-@font-face {
-    font-family: 'EB Garamond';
-    font-display: swap;
-    font-optical-sizing: auto;
-    font-feature-settings: none;
-    src: url('../fonts/EBGaramond12-Regular.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'EB Garamond Italic';
-    font-style: italic;
-    font-optical-sizing: auto;
-    font-feature-settings: none;
-    src: url('../fonts/EBGaramond12-Italic.otf') format('opentype');
-}
-
-@font-face {
-    font-family: 'EB Garamond SC';
-    font-optical-sizing: auto;
-    font-feature-settings: none;
-    src: url('../fonts/EBGaramondSC12-Regular.otf') format('opentype');
-}
-
+/* EB Garamond */
 @font-face {
     font-family: 'EB Garamond Initials F1';
     src: url('../fonts/EBGaramond-InitialsF1.otf') format('opentype');
@@ -29,4 +7,33 @@
 @font-face {
     font-family: 'EB Garamond Initials F2';
     src: url('../fonts/EBGaramond-InitialsF2.otf') format('opentype');
+}
+
+/* Source Serif */
+@font-face {
+    font-family: 'Source Serif';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../fonts/SourceSerif4-Regular.otf.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Serif';
+    font-weight: normal;
+    font-style: italic;
+    src: url('../fonts/SourceSerif4-It.otf.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Serif';
+    font-weight: bold;
+    font-style: normal;
+    src: url('../fonts/SourceSerif4-Bold.otf.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Source Serif';
+    font-weight: bold;
+    font-style: italic;
+    src: url('../fonts/SourceSerif4-BoldIt.otf.woff2') format('woff2');
 }

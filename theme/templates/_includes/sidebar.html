@@ -1,0 +1,15 @@
+<aside id="sidebar" class="sticky">
+    {% set obj = article|default(None) or page|default(None) %}
+    {% if obj and obj.toc %}
+        {{ obj.toc|add_toc_titles }}
+    {% endif %} 
+    <button
+        id="back-to-top"
+        class="back-to-top"
+        aria-label="Back to top"
+        title="Back to top"
+        hidden
+    >
+        &#10514;
+    </button>
+</aside>

@@ -1,35 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ DEFAULT_LANG }}">
 
 <head>
+    {% block head %}
     <title>{{ SITENAME }}{% if page or article %} - {% endif %}{% block title %}{% endblock %}</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="generator" content="Pelican" />
-    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/main.css" />
-    <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/{{ THEME_STATIC_DIR }}/assets/favicon/favicon.ico"> 
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/fonts.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/index.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/header.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/footer.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/blockquote.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/entry-header.css" />
+    <link rel="stylesheet" href="/{{ THEME_STATIC_DIR }}/css/sidebar.css" />
+    <script type="module" src="/{{ THEME_STATIC_DIR }}/js/preserveVideo.js" defer></script>
+    {% endblock %}
 </head>
 
 <body>
-    <main>
-        <nav id="banner">
+    <nav id="header">
+        <div>
+            {% for title, link in MENUITEMS %}
+                <a href="{{ link }}" class="header-link">{{ title }}</a>
+            {% endfor %}
+        </div>
+        <div id="header-center">
+            <video 
+                id="brahms-video" 
+                data-key="brahms-video"
+                alt="Brahms walking through a field of grass and reeds" 
+                playsinline 
+                muted 
+                loop
+            >
+                <source src="/{{ THEME_STATIC_DIR }}/assets/brahms.webm" type="video/webm" />
+            </video>
             <a id="home" href="{{ SITEURL }}">{{ SITENAME }}</a>
+        </div>
+        <div>
+            {% for title, link in MAINITEMS %}
+                <a href="{{ link }}" class="header-link" {% if p==page %} aria-current="page" {% endif %}>
+                    {{ title }}
+                </a>
+            {% endfor %}
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %} 
+
+    <footer id="footer">
+        {% if SOCIAL %}
             <div>
-                
-                {% for title, link in MENUITEMS %}
-                    <a href="{{ link }}">{{ title }}</a>
+                {% for title, link in SOCIAL %}
+                    <a href="{{ link }}" target="_blank">{{ title }}</a>
                 {% endfor %}
-                {% if DISPLAY_PAGES_ON_MENU %}
-                    {% for p in pages %}
-                        <a href="{{ SITEURL }}/{{ p.url }}" {% if p==page %} aria-current="page" {% endif %}>
-                            {{ p.title }}
-                        </a>
-                    {% endfor %}
-                {% endif %}
             </div>
-        </nav>
-        {% block content %}{% endblock %}
-    </main>
+        {% endif %}
+
+        <div id="footer-center">
+            <img src="/{{ THEME_STATIC_DIR }}/assets/favicon/android-chrome-192x192.png" height="192" width="192" />
+        </div>
+
+        {% if LINKS %}
+            <div>
+                {% for title, link in LINKS %}
+                    <a href="{{ link }}" target="_blank">{{ title }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </footer>
 </body>
+
+<script src="/{{ THEME_STATIC_DIR }}/js/brahmsVideo.js"></script>
+<script src="/{{ THEME_STATIC_DIR }}/js/backToTop.js"></script>
 
 </html>

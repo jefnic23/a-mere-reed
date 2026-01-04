@@ -1,0 +1,18 @@
+<header>
+    {% set obj = article|default(None) or page|default(None) %}
+    <h1 class="entry-title">{{ obj.title }}</h1>
+    {% if obj.summary %}
+        <div id="summary">{{ obj.summary }}</div>
+    {% endif %}
+    <div class="entry-metadata">
+        <div>
+            <span>By:</span> <b>{% for author in obj.authors %} {{ author }} {% endfor %}</b>
+        </div>
+        <div>
+            <span>Published:</span> <b>{{ obj.date.strftime('%b %-d, %Y') }}</b> 
+        </div>
+        <div>
+            <span>Read time:</span> <b>{{ obj.reading_time }}</b> 
+        </div>
+    </div>
+</header>
